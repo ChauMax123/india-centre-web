@@ -1,0 +1,173 @@
+#banner {
+  margin: 0 auto;
+  padding: 20px;
+}
+.section {
+  padding: 20px;
+  text-align: center;
+}
+
+.alternate-bg {
+  background-color: #f4f4f4;
+}
+
+.content-wrapper {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px;
+}
+
+#membership .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  max-width: 1100px;
+}
+
+.membership-type {
+  flex: 1 1 300px;
+  text-align: center;
+  padding: 15px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1.5s ease forwards;
+  padding-bottom: 80px;
+}
+
+.membership-type h2 {
+  font-size: 48px;
+  margin-bottom: 5px;
+}
+
+.membership-type p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.membership-type hr {
+  border: 0;
+  height: 1px;
+  background-color: #000;
+  margin: 10px 0;
+}
+
+.membership-type h3 {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.membership-type p:nth-of-type(2) {
+  margin-bottom: 20px;
+}
+
+.membership-type .btn-register {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #800020FF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.membership-type .btn-register:hover {
+  background-color: darkred;
+}
+
+.membership-type .btn-register i {
+  margin-right: 10px;
+}
+
+#membership-benefits .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+  gap: 20px;
+}
+
+.benefit-text{
+  flex: 2;
+  padding-left: 20px;
+  text-align: left;
+}
+
+#membership-policy .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10px;
+  gap: 20px;
+}
+
+#membership-policy .accordion-body {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+}
+
+
+.policy-text {
+  flex: 2;
+}
+
+.policy-text {
+  flex: 2;
+  padding-left: 20px;
+  text-align: left;
+}
+
+#membership-contact .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.membership-item {
+  flex: 1 1 300px;
+  text-align: center;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.membership-item p {
+  font-size: 1rem;
+  color: #7c7878;
+}
+
+.membership-item h3 {
+  color: #524f4f;
+}

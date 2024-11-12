@@ -1,0 +1,55 @@
+<section id="banner">
+  <app-banner
+    [isHomePage]="false"
+    title="Events"
+    description="Explore our cultural events, celebrations, and community gatherings that bring people together at the India
+        Centre.">
+  </app-banner>
+</section>
+
+
+<section id = "events_filter">
+  <div class="filter">
+    <select class="filter-select" [(ngModel)]="selectedEventType" (change)="filterEvents()">
+      <option value="Upcoming">Upcoming Events</option>
+      <option value="Current">Current Events</option>
+      <option value="Past">Past Events</option>
+    </select>
+  </div>
+</section>
+
+<section id="events-content">
+    <div class="events-slider-container">
+      <div class="events-slider">
+        <div class="event-item" *ngFor="let event of filteredEvents">
+          <h3>{{ event.title }}</h3>
+          <p class="event-details">{{ event.date }} - {{ event.location }}</p>
+          <p class="event-description">{{ event.description }}</p>
+        </div>
+      </div>
+    </div>
+</section><br/>
+
+
+<section id="bookEvent" class="section alternate-bg">
+  <div class="container">
+    <div class="bookEvent-item">
+      <h3>Explore Our Events</h3>
+      <p>See what’s happening and join the fun!</p>
+      <button (click)="redirectToEventSchedule()" class="btn">View Events</button>
+    </div>
+    <div class="bookEvent-item">
+      <h3>Reserve Your Spot</h3>
+      <p>Don’t miss out on our popular events.</p>
+      <button (click)="redirectToEventBooking()" class="btn">Reserve Now</button>
+    </div>
+    <div class="bookEvent-item">
+      <h3>Host Your Event</h3>
+      <p>Make your event unforgettable with us.</p>
+      <a routerLink="/contact-us" class="btn">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+
+

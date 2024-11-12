@@ -1,0 +1,86 @@
+<section id="gallery">
+  <app-banner
+    [isHomePage]="false"
+    title="Gallery"
+    description="Experience the joy of community, immerse yourself in diverse traditions, and create lasting memories with friends and family!">
+  </app-banner>
+</section>
+
+<section id="year-filter">
+  <div class="year-filter-container">
+    <label for="yearSelect"></label>
+    <select id="yearSelect" class="year-select" (change)="filterByYear($event)">
+      <option value="2024">2024</option>
+      <option value="2023">2023</option>
+      <option value="all">All Events</option>
+    </select>
+  </div>
+</section>
+
+<section id="gallery-content">
+  <div class="gallery-container">
+    <div class="row">
+      <div *ngIf="selectedCategoryEvent">
+        <div class="category" >
+        <h4>
+          <span>{{ selectedCategoryEvent.name }}</span>
+          <button class="event-toggle-button" (click)="closeEventGallery()">Close Event</button>
+        </h4>
+        <div class="images-row">
+          <div class="image-container" *ngFor="let image of selectedCategoryEvent.images; let i = index">
+            <img [src]="image" [alt]="selectedCategoryEvent.name + ' Image'" class="gallery-image"
+                 (click)="openLightbox(i, selectedCategoryEvent)">
+          </div>
+        </div>
+        </div>
+      </div>
+      <div *ngIf="!selectedCategoryEvent">
+        <div class="category" *ngFor="let category of selectedYearEvents">
+          <h4>
+            {{ category.name }}
+            <button class="event-toggle-button" (click)="openEventGallery(category)">View Event</button>
+          </h4>
+          <div class="images-row">
+            <div class="image-container" *ngFor="let image of category.images.slice(0, 6)">
+              <img [src]="image" [alt]="category.name + ' Image'" class="gallery-image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal" *ngIf="isLightboxOpen" id="lightbox" style="display: flex">
+  <div class="modal-content">
+    <span class="close" (click)="closeLightbox()">&times;</span>
+    <img [src]="currentImage" class="lightbox-image" [alt]="currentImageAlt">
+    <div class="navigation">
+      <div class="nav-button left-nav">
+        <button (click)="previousImage()">&#10094;</button>
+      </div>
+      <div class="nav-button right-nav">
+        <button (click)="nextImage()">&#10095;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="details" class="section alternate-bg">
+  <div class="container">
+    <div class="detail-item">
+      <h3>Give Us a Call</h3>
+      <p>+371 255 864 95</p>
+    </div>
+    <div class="detail-item">
+      <h3>We’re On The Map</h3>
+      <p>Olaine province<br>Latvia, LV 1206</p>
+    </div>
+    <div class="detail-item">
+      <h3>Send Us A Message</h3>
+      <p>Email: info&#64;indiacenterlatvia.org</p>
+      <p>Mail: IC, PO Box 2, Olaine, LV 1206 </p>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,55 @@
+/* Contact Component CSS */
+#banner {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cont-div {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.btn-style-2 {
+  background-color: rgb(128, 0, 32);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-style-2:hover {
+  background-color: darkred;
+}
+
+@media (max-width: 768px) {
+  .contact-banner h2 {
+    font-size: 2em;
+  }
+
+  .contact-banner p {
+    font-size: 1em;
+  }
+}
+
+.highlighted-div {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.g-recaptcha {
+  margin: 15px 0;
+}
