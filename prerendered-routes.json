@@ -1,0 +1,11 @@
+{
+  "routes": [
+    "/",
+    "/about-us",
+    "/contact-us",
+    "/events",
+    "/facilities",
+    "/media",
+    "/membership"
+  ]
+}
