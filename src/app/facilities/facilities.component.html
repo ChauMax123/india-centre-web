@@ -1,0 +1,66 @@
+<section id="banner" >
+  <app-banner
+    [isHomePage]="false"
+    title="Facilities at IC"
+    description="Discover our versatile spaces and amenities designed to host cultural events, celebrations, and community
+        gatherings at the India Centre.">
+  </app-banner>
+</section>
+
+<section id="facility-content">
+  <div class="facilities">
+    <div class="facility-list">
+      <div class="facility-item">
+        <img ngOptimizedImage src="assets/images/facility/gym.jpeg" alt="Gym & Fitness Center" class="facility-image">
+        <h3>Gym & Fitness Center</h3>
+        <p>State-of-the-art equipment for your fitness needs.</p>
+      </div>
+      <div class="facility-item">
+        <img ngOptimizedImage src="assets/images/facility/pond.jpeg" alt="Pond & Outdoor Area" class="facility-image">
+        <h3>Pond & Outdoor Area</h3>
+        <p>Relax by the pond and enjoy nature.</p>
+      </div>
+      <div class="facility-item">
+        <img ngOptimizedImage src="assets/images/facility/sauna.jpeg" alt="Sauna" class="facility-image">
+        <h3>Sauna</h3>
+        <p>Unwind and rejuvenate in our luxurious sauna.</p>
+      </div>
+      <div class="facility-item">
+        <img ngOptimizedImage src="assets/images/facility/guest-house.jpeg" alt="Guest House" class="facility-image">
+        <h3>Guest House</h3>
+        <p>Comfortable accommodations for visitors.</p>
+      </div>
+      <div class="facility-item">
+        <img ngOptimizedImage src="assets/images/facility/celebration-hall.jpeg" alt="Celebration Hall" class="facility-image">
+        <h3>Celebration Hall</h3>
+        <p>A spacious hall with a capacity for 250 people for events and celebrations.</p>
+      </div>
+      <div class="facility-item">
+        <img ngOptimizedImage src="assets/images/facility/yoga-room.jpeg" alt="Yoga & Meditation Room" class="facility-image">
+        <h3>Yoga & Meditation Room</h3>
+        <p>Find your inner peace in our peaceful yoga space.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking Section -->
+<section id="booking" class="section alternate-bg">
+  <div class="container">
+    <div class="booking-item">
+      <h3>Check Availability</h3>
+      <p>To get more details, click the below button:</p>
+      <button (click)="redirectToAvailability()" class="btn">Check Availability</button>
+    </div>
+    <div class="booking-item">
+      <h3>Book Facility</h3>
+      <p>To book a facility, please click the below button:</p>
+      <button (click)="redirectToBooking()" class="btn">Book Now</button>
+    </div>
+    <div class="booking-item">
+      <h3>More Information</h3>
+      <p>To get more info, please click the below button:</p>
+      <a href="https://sunsportsinfra.com/info" target="_blank" class="btn">Information</a>
+    </div>
+  </div>
+</section>

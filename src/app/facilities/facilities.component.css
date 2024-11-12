@@ -1,0 +1,126 @@
+#banner {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.facilities {
+  padding: 20px;
+}
+
+.facility-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.facility-item {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  width: calc(33.333% - 20px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto;
+  overflow: hidden;
+}
+
+.facility-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.facility-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.facility-item h3 {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #bf4040;
+}
+
+.facility-item p {
+  font-size: 0.9em;
+  color: #54595F;
+  margin: 5px 0;
+}
+
+.alternate-bg {
+  background-color: #f4f4f4;
+}
+
+.section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.booking-item {
+  flex: 1 1 300px;
+  text-align: center;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.booking-item p {
+  font-size: 1rem;
+  color: #7c7878;
+}
+
+.booking-item h3 {
+  color: #524f4f;
+}
+
+#booking .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #800020FF;
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #8B0000FF;
+}
+
+.facility-item {
+  background-color: #F4F4F4;
+}

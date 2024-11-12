@@ -1,0 +1,183 @@
+#banner {
+  margin: 0 auto;
+  padding: 20px;
+}
+ .section {
+  padding: 20px;
+  text-align: center;
+}
+
+.alternate-bg {
+  background-color: #f4f4f4;
+}
+
+.content-wrapper {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px;
+}
+
+#our-story .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+  gap: 20px;
+}
+
+.story-text {
+  flex: 2;
+  padding-right: 20px;
+  text-align: left;
+}
+
+.story-image {
+  flex: 1;
+}
+
+.story-image img {
+  max-width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#vision-mission-values .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+  gap: 20px;
+}
+
+.mission-image {
+  flex: 1;
+}
+
+.mission-image img {
+  max-width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mission-text {
+  flex: 2;
+  padding-left: 20px;
+  text-align: left;
+}
+
+#programs .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10px;
+  gap: 20px;
+}
+
+.programs-text {
+  flex: 2;
+}
+
+.programs-image {
+  flex: 1;
+}
+
+.programs-image img {
+  max-width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.programs-text {
+  flex: 2;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.team-member {
+  flex: 1 1 200px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member h3 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.team-member p {
+  color: #666;
+}
+
+#testimonials {
+  font-size: 1.2em;
+  color: #444;
+}
+
+#testimonials p {
+  font-style: italic;
+  margin: 20px 0;
+}
+
+.contact-item {
+  flex: 1 1 300px;
+  text-align: center;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-item p {
+  font-size: 1rem;
+  color: #7c7878;
+}
+
+.contact-item h3 {
+  color: #524f4f;
+}
+
+#contact .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}

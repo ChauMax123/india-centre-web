@@ -1,0 +1,17 @@
+<section [ngClass]="{'home-banner': isHomePage, 'default-banner': !isHomePage}" id="banner" class="section">
+  <div class="banner">
+    <div [ngClass]="{'home-banner-content': isHomePage, 'default-banner-content': !isHomePage}" class="banner-content">
+
+      <ng-container *ngIf="isHomePage; else defaultParagraph">
+        <h1>{{ title }}</h1>
+        <p class="home-banner-paragraph">{{ description }}</p>
+      </ng-container>
+
+      <ng-template #defaultParagraph>
+        <h2>{{ title }}</h2>
+        <p class="default-banner-paragraph">{{ description }}</p>
+      </ng-template>
+
+    </div>
+  </div>
+</section>
