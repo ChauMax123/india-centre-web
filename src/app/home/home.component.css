@@ -56,12 +56,32 @@
   width: 200px;
   padding: 8px;
   font-size: 1em;
-  font-weight: bold;
-  color: #fff;
-  background-color: #800020FF;
+  color: #003366;
+  background-color: #ffffff;
+  border: 2px solid #104a62;
   border-radius: 5px;
   appearance: none;
   text-align-last: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-select:hover {
+  background: linear-gradient(90deg,#006F8E, #003366);
+  color: white;
+  border-color: #FF7F00;
+}
+
+.filter-select option {
+  background-color: #f8f8f8;
+  color: #003366;
+  padding: 8px;
+}
+
+.filter-select:active,
+.filter-select:focus {
+  background:linear-gradient(90deg, #006F8E, #003366);
+  color: white;
 }
 
 .events {
@@ -180,19 +200,28 @@
 
 .read-more-button {
   margin-top: 5px;
-  padding: 8px;
+  padding: 3px 5px;
   font-size: 1em;
-  color: #fff;
-  background-color: #800020;
-  border: 2px solid #800020;
+  color: #003366;
+  background-color: #ffffff;
+  border: 2px solid #104a62;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
 
+
 .read-more-button:hover {
-  background-color: #a0002d;
+  background: linear-gradient(90deg,#006F8E, #003366);
+  color: #FFFFFF;
+  border-color: #FF7F00;
   transform: translateY(-2px);
+}
+
+.read-more-button:active,
+.read-more-button:focus {
+  background:linear-gradient(90deg, #006F8E, #003366);
+  color: white;
 }
 
 .highlighted-div {
@@ -223,16 +252,27 @@
 }
 
 .btn-style-2 {
-  background-color: rgb(128, 0, 32);
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  background-color: #ffffff;
+  color: #104a62;
+  border: 2px solid #003366;
+  padding: 10px ;
+  font-size: 1em;
   cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-style-2:hover {
-  background-color: darkred;
+  background: linear-gradient(90deg,#006F8E, #003366);
+  color: #FFFFFF;
+  border-color: #FF7F00;
+  transform: translateY(-2px);
+}
+
+.btn-style-2:active,
+.btn-style-2:focus {
+  background:linear-gradient(90deg, #006F8E, #003366);
+  color: white;
 }
 
 .slider-container,
@@ -240,7 +280,6 @@
   padding: 20px;
 }
 
-/* Slider Styling */
 .slider {
   height: 250px;
   width: 100%;

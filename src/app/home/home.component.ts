@@ -1,11 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {EventsService} from '../services/events.service';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {EmailService} from '../services/email.service';
-import {NgForOf, NgIf} from '@angular/common';
+import {isPlatformBrowser, NgForOf, NgIf} from '@angular/common';
 import {Router, RouterLink} from '@angular/router';
 import {BannerComponent} from '../banner/banner.component';
 import {CarouselModule} from 'ngx-owl-carousel-o';
+
+
+declare var grecaptcha: any;
 
 @Component({
   selector: 'app-home',
@@ -22,7 +25,7 @@ import {CarouselModule} from 'ngx-owl-carousel-o';
   ],
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   events: any[] = [];
   selectedEventType: string = 'Upcoming';
   emailSent: boolean = false;
@@ -35,6 +38,7 @@ export class HomeComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private emailService: EmailService,
+    @Inject(PLATFORM_ID) private platformId: any
   ) {
     this.form = this.fb.group({
       from_name: ['', Validators.required],
@@ -49,8 +53,25 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/about-us']).then(() => {
     });
   }
+
   ngOnInit(): void {
     this.filterEvents();
+  }
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      if (typeof grecaptcha !== 'undefined') {
+        console.log('grecaptcha is available.');
+
+        const recaptchaContainer = document.getElementById('home-recaptcha');
+        if (!recaptchaContainer || recaptchaContainer.hasChildNodes()) {
+          console.log('reCAPTCHA has already been rendered.');
+          return;
+        }
+      } else {
+        console.error('grecaptcha is not defined.');
+      }
+    }
   }
 
   filterEvents(): void {

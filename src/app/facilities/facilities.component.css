@@ -42,7 +42,7 @@
 .facility-item h3 {
   font-size: 1.5em;
   margin: 10px 0;
-  color: #bf4040;
+  color: #003366;
 }
 
 .facility-item p {
@@ -106,21 +106,28 @@
   gap: 20px;
 }
 
-.btn {
+.booking-item .btn{
   display: inline-block;
+  background-color: #ffffff;
+  color: #104a62;
+  border: 2px solid #003366;
   padding: 10px 20px;
+  font-size: 16px;
   margin-top: 10px;
-  background-color: #800020FF;
-  color: #FFF;
-  text-decoration: none;
+  cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.btn:hover {
-  background-color: #8B0000FF;
+.booking-item .btn:hover {
+  background: linear-gradient(90deg,#006F8E, #003366);
+  color: #FFFFFF;
+  border-color: #FF7F00;
+  transform: translateY(-2px);
 }
 
-.facility-item {
-  background-color: #F4F4F4;
+.booking-item .btn:active,
+.booking-item .btn:focus {
+  background:linear-gradient(90deg, #006F8E, #003366);
+  color: white;
 }

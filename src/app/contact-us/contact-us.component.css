@@ -1,4 +1,3 @@
-/* Contact Component CSS */
 #banner {
   margin: 0 auto;
   padding: 20px;
@@ -21,17 +20,36 @@
   margin-bottom: 15px;
 }
 
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+.contact-info i {
+  color: #003366;
+  margin-right: 10px;
+}
+
 .btn-style-2 {
-  background-color: rgb(128, 0, 32);
-  color: white;
+  background-color: #ffffff;
+  color: #104a62;
+  border: 2px solid #003366;
   padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-style-2:hover {
-  background-color: darkred;
+  background: linear-gradient(90deg,#006F8E, #003366);
+  color: white;
+  border-color: #FF7F00;
+}
+
+.btn-style-2:active,
+.btn-style-2:focus {
+  background:linear-gradient(90deg, #006F8E, #003366);
+  color: white;
 }
 
 @media (max-width: 768px) {

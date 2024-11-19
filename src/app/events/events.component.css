@@ -16,27 +16,35 @@
   text-align: center;
 }
 
-.filter-select {
+#events_filter .filter-select {
   width: 200px;
   padding: 8px;
   font-size: 1em;
-  font-weight: bold;
-  color: #fff;
-  background-color: #800020FF;
+  color: #003366;
+  background-color: #ffffff;
+  border: 2px solid #104a62;
   border-radius: 5px;
   appearance: none;
   text-align-last: center;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.filter-select:hover {
-  background-color: #a0002d;
-  transform: translateY(-2px);
+#events_filter .filter-select:hover {
+  background: linear-gradient(90deg,#006F8E, #003366);
+  color: white;
+  border-color: #FF7F00;
 }
 
-.filter-select:focus {
-  outline: none;
-  border: 2px solid #a0002d;
-  box-shadow: 0 0 5px rgba(160, 0, 45, 0.6);
+#events_filter .filter-select option {
+  background-color: #f8f8f8;
+  color: #003366;
+  padding: 8px;
+}
+
+#events_filter .filter-select:active,
+#events_filter .filter-select:focus {
+  background:linear-gradient(90deg, #006F8E, #003366);
+  color: white;
 }
 
 .events-slider-container {
@@ -80,7 +88,7 @@
 .event-description {
   font-size: 1em;
   line-height: 1.2;
-  color: #570d22;
+  color: #003366;
 }
 
 .alternate-bg {
@@ -138,17 +146,28 @@
   gap: 20px;
 }
 
-.btn {
+.btn{
   display: inline-block;
+  background-color: #ffffff;
+  color: #104a62;
+  border: 2px solid #003366;
   padding: 10px 20px;
+  font-size: 16px;
   margin-top: 10px;
-  background-color: #800020FF;
-  color: #FFF;
-  text-decoration: none;
+  cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .btn:hover {
-  background-color: #8B0000FF;
+  background: linear-gradient(90deg,#006F8E, #003366);
+  color: #FFFFFF;
+  border-color: #FF7F00;
+  transform: translateY(-2px);
+}
+
+.btn:active,
+.btn:focus {
+  background:linear-gradient(90deg, #006F8E, #003366);
+  color: white;
 }

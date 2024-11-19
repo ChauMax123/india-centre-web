@@ -35,14 +35,13 @@
 .membership-type {
   flex: 1 1 300px;
   text-align: center;
-  padding: 15px;
   background-color: #f4f4f4;
   border: 1px solid #ddd;
   border-radius: 8px;
   opacity: 0;
   transform: translateY(20px);
   animation: slideIn 1.5s ease forwards;
-  padding-bottom: 80px;
+  padding: 15px 15px 80px;
 }
 
 .membership-type h2 {
@@ -75,19 +74,30 @@
   display: inline-flex;
   align-items: center;
   padding: 10px 20px;
-  background-color: #800020FF;
-  color: white;
+  background-color: #ffffff;
+  color: #104a62;
+  border: 2px solid #003366;
   text-decoration: none;
   border-radius: 5px;
   position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .membership-type .btn-register:hover {
-  background-color: darkred;
+  background: linear-gradient(90deg,#006F8E, #003366);
+  color: #FFFFFF;
+  border-color: #FF7F00;
 }
+
+.membership-type .btn-register:active,
+.membership-type .btn-register:focus {
+  background:linear-gradient(90deg, #006F8E, #003366);
+  color: white;
+}
+
 
 .membership-type .btn-register i {
   margin-right: 10px;
@@ -170,4 +180,18 @@
 
 .membership-item h3 {
   color: #524f4f;
+}
+
+.membership-item a {
+  color: #006F8E;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+  background-image: none;
+  -webkit-background-clip: text;
+}
+
+.membership-item a:hover {
+  background-image: linear-gradient(90deg, #FF7F00, #003366);
+  color: transparent;
+  text-decoration: underline;
 }
