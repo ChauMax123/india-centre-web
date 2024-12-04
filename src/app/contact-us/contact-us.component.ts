@@ -2,7 +2,7 @@ import {AfterViewInit, Component, Inject, OnInit, PLATFORM_ID} from '@angular/co
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EmailService } from '../services/email.service';
 import {isPlatformBrowser, NgIf} from '@angular/common';
-import {BannerComponent} from '../banner/banner.component';
+import {BannerComponent} from '../shared/banner/banner.component';
 
 declare var grecaptcha: any;
 
@@ -70,6 +70,4 @@ export class ContactUsComponent implements OnInit, AfterViewInit  {
       this.emailSent = false;
     }
   }
-
-
 }

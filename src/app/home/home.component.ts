@@ -2,9 +2,9 @@ import {AfterViewInit, Component, Inject, OnInit, PLATFORM_ID} from '@angular/co
 import {EventsService} from '../services/events.service';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {EmailService} from '../services/email.service';
-import {isPlatformBrowser, NgForOf, NgIf} from '@angular/common';
+import {isPlatformBrowser, NgForOf, NgIf, NgOptimizedImage} from '@angular/common';
 import {Router, RouterLink} from '@angular/router';
-import {BannerComponent} from '../banner/banner.component';
+import {BannerComponent} from '../shared/banner/banner.component';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 
 
@@ -22,6 +22,7 @@ declare var grecaptcha: any;
     RouterLink,
     BannerComponent,
     CarouselModule,
+    NgOptimizedImage,
   ],
   styleUrls: ['./home.component.css']
 })

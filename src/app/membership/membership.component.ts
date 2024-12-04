@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {BannerComponent} from '../banner/banner.component';
+import {BannerComponent} from '../shared/banner/banner.component';
 import {RouterLink} from '@angular/router';
 import {NgForOf, NgIf} from '@angular/common';
 

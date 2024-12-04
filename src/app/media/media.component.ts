@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NgForOf, NgIf, ViewportScroller} from '@angular/common';
-import {BannerComponent} from '../banner/banner.component';
+import {BannerComponent} from '../shared/banner/banner.component';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-media',
@@ -14,100 +15,33 @@ import {BannerComponent} from '../banner/banner.component';
   styleUrls: ['./media.component.css']
 })
 export class MediaComponent {
-  constructor(
-    private viewportScroller: ViewportScroller) {
-  }
-
+  events: any[] = [];
+  selectedYearEvents: any[] = [];
+  selectedCategoryEvent: any = null;
   isLightboxOpen = false;
   currentImage: string = '';
   currentImageAlt: string = '';
   currentImageIndex: number = 0;
-  selectedYearEvents: any[] = [];
-  selectedCategoryEvent: any = null;
 
-  events = [
-    {
-      year: 2024,
-      categories: [
-        {
-          name: 'Diwali Celebration',
-          images: [
-            'assets/images/gallery/2024/DiwaliCelebration/IMG_1061.JPG',
-            'assets/images/gallery/2024/DiwaliCelebration/IMG_1091.JPG',
-            'assets/images/gallery/2024/DiwaliCelebration/IMG_1110.JPG',
-            'assets/images/gallery/2024/DiwaliCelebration/IMG_1188.JPG',
-            'assets/images/gallery/2024/DiwaliCelebration/IMG_1304.JPG',
-            'assets/images/gallery/2024/DiwaliCelebration/IMG_1354.JPG',
-            'assets/images/gallery/2024/DiwaliCelebration/IMG_1394.JPG',
-            'assets/images/gallery/2024/DiwaliCelebration/IMG_1396.JPG',
-          ]
-        },
-        {
-          name: 'Holi Celebration',
-          images: [
-            'assets/images/gallery/2024/HoliCelebration/IMG_1422.JPG',
-            'assets/images/gallery/2024/HoliCelebration/IMG_1464.JPG',
-            'assets/images/gallery/2024/HoliCelebration/IMG_1503.JPG',
-            'assets/images/gallery/2024/HoliCelebration/IMG_1540.JPG',
-            'assets/images/gallery/2024/HoliCelebration/IMG_1572.JPG',
-          ]
-        },
-        {
-          name: 'Independence Day',
-          images: [
-            'assets/images/gallery/2024/IndependenceDay/IMG_1008.JPG',
-            'assets/images/gallery/2024/IndependenceDay/IMG_1091.JPG',
-            'assets/images/gallery/2024/IndependenceDay/IMG_1110.JPG',
-            'assets/images/gallery/2024/IndependenceDay/IMG_1133.JPG',
-            'assets/images/gallery/2024/IndependenceDay/IMG_1188.JPG',
-            'assets/images/gallery/2024/IndependenceDay/IMG_1304.JPG',
-            'assets/images/gallery/2024/IndependenceDay/IMG_1354.JPG',
-            'assets/images/gallery/2024/IndependenceDay/IMG_1386.JPG',
-            'assets/images/gallery/2024/IndependenceDay/IMG_1394.JPG',
-            'assets/images/gallery/2024/IndependenceDay/IMG_1422.JPG',
-            'assets/images/gallery/2024/IndependenceDay/IMG_1464.JPG',
 
-          ]
-        }
-      ]
-    },
-    {
-      year: 2023,
-      categories: [
-        {
-          name: 'Christmas Celebration',
-          images: [
-            'assets/images/gallery/2023/ChristmasCelebration/IMG_1061.JPG',
-            'assets/images/gallery/2023/ChristmasCelebration/IMG_1091.JPG',
-            'assets/images/gallery/2023/ChristmasCelebration/IMG_1110.JPG',
-            'assets/images/gallery/2023/ChristmasCelebration/IMG_1188.JPG',
-            'assets/images/gallery/2023/ChristmasCelebration/IMG_1304.JPG',
-            'assets/images/gallery/2023/ChristmasCelebration/IMG_1354.JPG',
-            'assets/images/gallery/2023/ChristmasCelebration/IMG_1394.JPG',
-            'assets/images/gallery/2023/ChristmasCelebration/IMG_1396.JPG',
-          ]
-        },
-        {
-          name: 'Summer Party',
-          images: [
-            'assets/images/gallery/2023/SummerParty/IMG_1422.JPG',
-            'assets/images/gallery/2023/SummerParty/IMG_1464.JPG',
-            'assets/images/gallery/2023/SummerParty/IMG_1503.JPG',
-            'assets/images/gallery/2023/SummerParty/IMG_1540.JPG',
-            'assets/images/gallery/2023/SummerParty/IMG_1572.JPG',
-
-          ]
-        }
-      ]
-    }
-  ];
+  constructor(
+    private http: HttpClient,
+    private viewportScroller: ViewportScroller) {
+  }
 
   ngOnInit(): void {
-    // Default to showing events from the latest year (2024)
-    const latestYear = Math.max(...this.events.map(event => event.year));
-    const latestYearEvents = this.events.find(event => event.year === latestYear);
+    this.http.get<any[]>('assets/data/gallery-data.json').subscribe((data) => {
+      this.events = data;
+      this.selectLatestYearEvents();
+    });
+  }
+
+  selectLatestYearEvents(): void {
+    const latestYear = Math.max(...this.events.map((event) => event.year));
+    const latestYearEvents = this.events.find((event) => event.year === latestYear);
     this.selectedYearEvents = latestYearEvents ? latestYearEvents.categories : [];
   }
+
 
   filterByYear(event: any) {
     const selectedYear = event.target.value;

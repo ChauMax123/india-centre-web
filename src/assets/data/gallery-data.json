@@ -1,0 +1,176 @@
+[
+  {
+    "year": 2024,
+    "categories": [
+      {
+        "name": "Holi Celebration",
+        "images": [
+          "assets/images/gallery/2024/HoliCelebration/1.JPG",
+          "assets/images/gallery/2024/HoliCelebration/2.JPG",
+          "assets/images/gallery/2024/HoliCelebration/3.JPG",
+          "assets/images/gallery/2024/HoliCelebration/4.JPG",
+          "assets/images/gallery/2024/HoliCelebration/5.JPG"
+        ]
+      },
+      {
+        "name": "Independence Day",
+        "images": [
+          "assets/images/gallery/2024/IndependenceDay/IMG_1008.JPG",
+          "assets/images/gallery/2024/IndependenceDay/IMG_1091.JPG",
+          "assets/images/gallery/2024/IndependenceDay/IMG_1110.JPG",
+          "assets/images/gallery/2024/IndependenceDay/IMG_1133.JPG",
+          "assets/images/gallery/2024/IndependenceDay/IMG_1188.JPG",
+          "assets/images/gallery/2024/IndependenceDay/IMG_1304.JPG",
+          "assets/images/gallery/2024/IndependenceDay/IMG_1354.JPG",
+          "assets/images/gallery/2024/IndependenceDay/IMG_1386.JPG",
+          "assets/images/gallery/2024/IndependenceDay/IMG_1394.JPG",
+          "assets/images/gallery/2024/IndependenceDay/IMG_1422.JPG",
+          "assets/images/gallery/2024/IndependenceDay/IMG_1464.JPG"
+        ]
+      },
+      {
+        "name": "Diwali Celebration",
+        "images": [
+          "assets/images/gallery/2024/DiwaliCelebration/1.jpeg",
+          "assets/images/gallery/2024/DiwaliCelebration/2.jpeg",
+          "assets/images/gallery/2024/DiwaliCelebration/3.jpeg",
+          "assets/images/gallery/2024/DiwaliCelebration/4.jpeg",
+          "assets/images/gallery/2024/DiwaliCelebration/5.jpg",
+          "assets/images/gallery/2024/DiwaliCelebration/6.jpg",
+          "assets/images/gallery/2024/DiwaliCelebration/7.jpg",
+          "assets/images/gallery/2024/DiwaliCelebration/8.jpg",
+          "assets/images/gallery/2024/DiwaliCelebration/9.jpg",
+          "assets/images/gallery/2024/DiwaliCelebration/10.jpg",
+          "assets/images/gallery/2024/DiwaliCelebration/11.jpg",
+          "assets/images/gallery/2024/DiwaliCelebration/12.jpg",
+          "assets/images/gallery/2024/DiwaliCelebration/13.jpg",
+          "assets/images/gallery/2024/DiwaliCelebration/14.jpg",
+          "assets/images/gallery/2024/DiwaliCelebration/15.jpg",
+          "assets/images/gallery/2024/DiwaliCelebration/16.jpg",
+          "assets/images/gallery/2024/DiwaliCelebration/17.jpg",
+          "assets/images/gallery/2024/DiwaliCelebration/18.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2023,
+    "categories": [
+      {
+        "name": "Christmas Celebration",
+        "images": [
+          "assets/images/gallery/2023/ChristmasCelebration/IMG_1061.JPG",
+          "assets/images/gallery/2023/ChristmasCelebration/IMG_1061.JPG"
+        ]
+      },
+      {
+        "name": "Summer Party",
+        "images": [
+          "assets/images/gallery/2023/SummerParty/IMG_1422.JPG",
+          "assets/images/gallery/2023/SummerParty/IMG_1464.JPG",
+          "assets/images/gallery/2023/SummerParty/IMG_1503.JPG",
+          "assets/images/gallery/2023/SummerParty/IMG_1572.JPG"
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2021,
+    "categories": [
+      {
+        "name": "Summer Outing",
+        "images": [
+          "assets/images/gallery/2021/SummerOutings/1.jpg",
+          "assets/images/gallery/2021/SummerOutings/2.jpg",
+          "assets/images/gallery/2021/SummerOutings/3.jpg",
+          "assets/images/gallery/2021/SummerOutings/4.jpg",
+          "assets/images/gallery/2021/SummerOutings/5.jpg",
+          "assets/images/gallery/2021/SummerOutings/6.jpg",
+          "assets/images/gallery/2021/SummerOutings/7.jpg",
+          "assets/images/gallery/2021/SummerOutings/8.jpg",
+          "assets/images/gallery/2021/SummerOutings/9.jpg"
+
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2020,
+    "categories": [
+      {
+        "name": "Campfire Chronicles",
+        "images": [
+          "assets/images/gallery/2020/CampfireChronicles/1.jpg",
+          "assets/images/gallery/2020/CampfireChronicles/2.jpg",
+          "assets/images/gallery/2020/CampfireChronicles/3.jpg",
+          "assets/images/gallery/2020/CampfireChronicles/4.jpg",
+          "assets/images/gallery/2020/CampfireChronicles/6.jpg",
+          "assets/images/gallery/2020/CampfireChronicles/7.jpg",
+          "assets/images/gallery/2020/CampfireChronicles/9.jpg",
+          "assets/images/gallery/2020/CampfireChronicles/10.jpg",
+          "assets/images/gallery/2020/CampfireChronicles/11.jpg",
+          "assets/images/gallery/2020/CampfireChronicles/12.jpg",
+          "assets/images/gallery/2020/CampfireChronicles/13.jpg"
+        ]
+      },
+      {
+        "name": "Picnic Paradise",
+        "images": [
+          "assets/images/gallery/2020/PicnicParadise/1.jpg",
+          "assets/images/gallery/2020/PicnicParadise/2.jpg",
+          "assets/images/gallery/2020/PicnicParadise/3.jpg",
+          "assets/images/gallery/2020/PicnicParadise/4.jpeg",
+          "assets/images/gallery/2020/PicnicParadise/5.jpg",
+          "assets/images/gallery/2020/PicnicParadise/6.jpg",
+          "assets/images/gallery/2020/PicnicParadise/7.jpg",
+          "assets/images/gallery/2020/PicnicParadise/8.jpg",
+          "assets/images/gallery/2020/PicnicParadise/9.jpeg",
+          "assets/images/gallery/2020/PicnicParadise/10.jpeg",
+          "assets/images/gallery/2020/PicnicParadise/11.jpg",
+          "assets/images/gallery/2020/PicnicParadise/12.jpg",
+          "assets/images/gallery/2020/PicnicParadise/13.jpg",
+          "assets/images/gallery/2020/PicnicParadise/14.jpeg",
+          "assets/images/gallery/2020/PicnicParadise/15.jpeg",
+          "assets/images/gallery/2020/PicnicParadise/16.jpeg",
+          "assets/images/gallery/2020/PicnicParadise/17.jpg",
+          "assets/images/gallery/2020/PicnicParadise/18.jpeg"
+        ]
+      },
+      {
+        "name": "River Rush Adventure",
+        "images": [
+          "assets/images/gallery/2020/RiverRushAdventure/1.jpg",
+          "assets/images/gallery/2020/RiverRushAdventure/2.jpg",
+          "assets/images/gallery/2020/RiverRushAdventure/3.jpg",
+          "assets/images/gallery/2020/RiverRushAdventure/4.jpg",
+          "assets/images/gallery/2020/RiverRushAdventure/5.jpg",
+          "assets/images/gallery/2020/RiverRushAdventure/6.jpg",
+          "assets/images/gallery/2020/RiverRushAdventure/7.jpg",
+          "assets/images/gallery/2020/RiverRushAdventure/8.jpg",
+          "assets/images/gallery/2020/RiverRushAdventure/10.jpg",
+          "assets/images/gallery/2020/RiverRushAdventure/11.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2019,
+    "categories": [
+      {
+        "name": "Adventure Retreat",
+        "images": [
+          "assets/images/gallery/2019/AdventureRetreat/PHOTO-08-11-1.jpg",
+          "assets/images/gallery/2019/AdventureRetreat/PHOTO-08-11-2.jpg",
+          "assets/images/gallery/2019/AdventureRetreat/PHOTO-08-11-3.jpg",
+          "assets/images/gallery/2019/AdventureRetreat/PHOTO-08-11-4.jpg",
+          "assets/images/gallery/2019/AdventureRetreat/PHOTO-08-11-5.jpg",
+          "assets/images/gallery/2019/AdventureRetreat/PHOTO-08-11-6.jpg",
+          "assets/images/gallery/2019/AdventureRetreat/PHOTO-08-11-7.jpg",
+          "assets/images/gallery/2019/AdventureRetreat/PHOTO-08-11-8.jpg",
+          "assets/images/gallery/2019/AdventureRetreat/PHOTO-08-11-9.jpg"
+        ]
+      }
+    ]
+  }
+]
+

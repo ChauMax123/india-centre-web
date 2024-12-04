@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
-import {BannerComponent} from "../banner/banner.component";
+import {BannerComponent} from "../shared/banner/banner.component";
 import {WindowService} from '../services/window.service';
 
 @Component({
