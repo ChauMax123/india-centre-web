@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
-import {EventsService} from '../services/events.service';
+import {EventsService} from '../services/events/events.service';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {EmailService} from '../services/email.service';
 import {isPlatformBrowser, NgForOf, NgIf, NgOptimizedImage} from '@angular/common';

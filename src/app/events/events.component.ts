@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {EventsService} from '../services/events.service';
+import {EventsService} from '../services/events/events.service';
 import {NgForOf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {BannerComponent} from '../shared/banner/banner.component';
 import {RouterLink} from '@angular/router';
-import {WindowService} from '../services/window.service';
+import {WindowService} from '../services/window/window.service';
 
 interface Event {
   title: string;
