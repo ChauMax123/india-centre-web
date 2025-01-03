@@ -10,7 +10,8 @@ import {HeaderComponent} from './shared/header/header.component';
 import {FooterComponent} from './shared/footer/footer.component';
 import {CommonModule} from '@angular/common';
 import {MembershipComponent} from './membership/membership.component';
-import {WindowService} from './services/window.service';
+import {WindowService} from './services/window/window.service';
+import {SignupComponent} from './signup/signup.component';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +29,7 @@ import {WindowService} from './services/window.service';
     FooterComponent,
     CommonModule,
     MembershipComponent,
+    SignupComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

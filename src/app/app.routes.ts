@@ -6,6 +6,7 @@ import {FacilitiesComponent} from './facilities/facilities.component';
 import {MediaComponent} from './media/media.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
 import {MembershipComponent} from './membership/membership.component';
+import {SignupComponent} from './signup/signup.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,5 +16,6 @@ export const routes: Routes = [
   { path: 'media', component: MediaComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'membership', component: MembershipComponent },
+  { path: 'signup', component: SignupComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
