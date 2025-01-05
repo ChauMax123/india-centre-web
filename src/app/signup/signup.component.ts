@@ -1,92 +1,106 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth/auth.service';
 import { environment } from '../../environments/environment';
-import { LocalStorageService } from '../shared/storage/local.storage.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Router} from '@angular/router';
-import {AuthService} from '../services/auth/auth.service';
-
-const headers = new HttpHeaders().set('Content-Type', 'application/json');
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  standalone: true,
+  styleUrls: ['./signup.component.css'],
   imports: [
-    FormsModule,
-    NgIf
+    NgIf,
+    ReactiveFormsModule
   ],
-  styleUrls: ['./signup.component.css']
+  standalone: true
 })
 export class SignupComponent {
-  isSignUp = true; // Track whether it's signup or login
-  authData = {
-    name: '',
-    email: '',
-    password: ''
-  };
+  isSignUp = true;
+  signUpForm: FormGroup;
+  loginForm: FormGroup;
   errorMessage: string = '';
 
   constructor(
+    private fb: FormBuilder,
     private http: HttpClient,
     private authService: AuthService,
-    private localStorageService: LocalStorageService,
     private router: Router
-  ) {}
+  ) {
+    // Define the signUpForm with validation
+    this.signUpForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      name: ['', Validators.required],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.pattern('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$'),
+        ],
+      ],
+    });
+
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
+    });
+  }
 
   toggleForm() {
     this.isSignUp = !this.isSignUp;
+    this.errorMessage = '';
   }
 
-  onSubmit() {
-    if (this.isSignUp) {
+  onSignUpSubmit() {
+    if (this.signUpForm.valid) {
       this.signup();
-    } else {
+    }
+  }
+
+  onLoginSubmit() {
+    if (this.loginForm.valid) {
       this.login();
     }
   }
 
   signup() {
-    const signupData = { ...this.authData };
+    const signupData = this.signUpForm.value;
 
-    this.http.post(`${environment.backendUrl}/auth/signup`, signupData).subscribe({
-      next: () => {
-        console.log('Signup successful');
-        alert('Signup successful! Please login.');
-        this.errorMessage = '';
-        this.clearAuthData(); // Clear the form after successful signup
-      },
-      error: (err) => {
-        this.errorMessage =
-          err.error && err.error.error === 'User already exists'
-            ? 'User already exists! Please login instead.'
-            : 'An error occurred. Please try again.';
-      }
-    });
+    this.http
+      .post(`${environment.backendUrl}/auth/signup`, signupData, { responseType: 'text' })
+      .subscribe({
+        next: () => {
+          alert('Signup successful! Please login.');
+          this.signUpForm.reset();
+          this.isSignUp = false;
+        },
+        error: (err) => {
+          this.errorMessage =
+            err.status === 409
+              ? 'User already exists! Please login instead.'
+              : 'An error occurred. Please try again.';
+        },
+      });
   }
 
   login() {
-    const loginData = { ...this.authData }; // Copying authData for clarity
+    const loginData = this.loginForm.value;
 
-    this.http.post(`${environment.backendUrl}/auth/signin`, loginData, { headers }).subscribe({
+    this.http.post(`${environment.backendUrl}/auth/signin`, loginData).subscribe({
       next: (response: any) => {
-        console.log('Login successful:', response);
-        this.authService.login(response.token); // Store the token and set user as logged in
-        this.router.navigate(['/home']); // Redirect to home page
-        this.clearAuthData();
+        this.authService.login(response.token);
+        this.router.navigate(['/home']);
+        this.loginForm.reset();
       },
-      error: (error) => {
-        console.error('Login failed:', error);
-      }
+      error: (err) => {
+        console.error('Login failed:', err);
+        this.errorMessage =
+          err.status === 401
+            ? 'Invalid email or password. Please try again.'
+            : 'An error occurred. Please try again.';
+      },
     });
-  }
-
-  private clearAuthData() {
-    this.authData = {
-      name: '',
-      email: '',
-      password: ''
-    };
   }
 }
