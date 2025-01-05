@@ -1,25 +1,34 @@
 <header>
   <nav>
     <a routerLink="/home" class="logo">
-      <img src="/assets/images/Logo-IC.png" alt="Logo" />
+      <img src="/assets/images/ha__5_-removebg-preview.png" alt="Logo" />
     </a>
-
-    <div class="menu-toggle" (click)="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <div class="menu-overlay" [class.active]="isMenuOpen" (click)="toggleMenu()"></div>
 
     <div class="nav_item_wrap" [class.active]="isMenuOpen">
       <a routerLink="/home" routerLinkActive="active" (click)="toggleMenu()">Home</a>
       <a routerLink="/about-us" routerLinkActive="active" (click)="toggleMenu()">About Us</a>
       <a routerLink="/events" routerLinkActive="active" (click)="toggleMenu()">Events</a>
-      <a routerLink="/media" routerLinkActive="active" (click)="toggleMenu()">Gallery</a>
       <a routerLink="/facilities" routerLinkActive="active" (click)="toggleMenu()">Facilities</a>
-      <a routerLink="/membership" routerLinkActive="active" (click)="toggleMenu()">Membership</a>
-      <a routerLink="/contact-us" routerLinkActive="active" (click)="toggleMenu()">Contact Us</a>
+
+      <!-- Links for logged-in users -->
+      <ng-container *ngIf="isLoggedIn$ | async; else notLoggedIn">
+        <a routerLink="/profile" routerLinkActive="active" (click)="toggleMenu()">My Profile</a>
+        <a (click)="logout()">Logout</a>
+      </ng-container>
+
+      <!-- Links for guests -->
+      <ng-template #notLoggedIn>
+        <a routerLink="/media" routerLinkActive="active" (click)="toggleMenu()">Gallery</a>
+        <a routerLink="/membership" routerLinkActive="active" (click)="toggleMenu()">Membership</a>
+        <a routerLink="/contact-us" routerLinkActive="active" (click)="toggleMenu()">Contact Us</a>
+        <a routerLink="/signup" routerLinkActive="active" (click)="toggleMenu()">Login/Signup</a>
+      </ng-template>
+    </div>
+
+    <div class="menu-toggle" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </nav>
 </header>
