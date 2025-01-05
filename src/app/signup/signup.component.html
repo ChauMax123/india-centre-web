@@ -1,0 +1,95 @@
+<div class="auth-container">
+  <h2>{{ isSignUp ? 'Create an Account' : 'Login' }}</h2>
+
+  <!-- Signup Form -->
+  <form *ngIf="isSignUp" [formGroup]="signUpForm" (ngSubmit)="onSignUpSubmit()">
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        formControlName="email"
+        required
+      />
+      <div *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched" class="error">
+        Valid email is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input
+        id="name"
+        type="text"
+        formControlName="name"
+        required
+      />
+      <div *ngIf="signUpForm.get('name')?.invalid && signUpForm.get('name')?.touched" class="error">
+        Full name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        id="pass"
+        type="password"
+        formControlName="password"
+        required
+      />
+      <div *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched" class="error">
+        Password must be at least 8 characters, include an uppercase letter, a number, and a special character.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="signUpForm.invalid">
+      Sign Up
+    </button>
+  </form>
+
+  <!-- Login Form -->
+  <form *ngIf="!isSignUp" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        id="emails"
+        type="email"
+        formControlName="email"
+        required
+      />
+      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error">
+        Valid email is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        required
+      />
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
+        Password is required.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">
+      Login
+    </button>
+  </form>
+
+  <div class="toggle-option">
+    <span *ngIf="isSignUp" (click)="toggleForm()">
+      Already have an account? Login
+    </span>
+    <span *ngIf="!isSignUp" (click)="toggleForm()">
+      Don't have an account? Sign Up
+    </span>
+  </div>
+</div>

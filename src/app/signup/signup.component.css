@@ -1,0 +1,73 @@
+/* Container for the form */
+.auth-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Form heading */
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #104a62;
+}
+
+/* Form input groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Label styles */
+.form-group label {
+  font-size: 14px;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Input styles */
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Button styles */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #104a62;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #052e54;
+}
+
+/* Toggle option */
+.toggle-option {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.toggle-option span {
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.toggle-option span:hover {
+  text-decoration: underline;
+}

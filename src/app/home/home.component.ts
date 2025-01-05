@@ -1,11 +1,11 @@
 import {AfterViewInit, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
-import {EventsService} from '../services/events.service';
+import {EventsService} from '../services/events/events.service';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {EmailService} from '../services/email.service';
 import {isPlatformBrowser, NgForOf, NgIf, NgOptimizedImage} from '@angular/common';
 import {Router, RouterLink} from '@angular/router';
 import {BannerComponent} from '../shared/banner/banner.component';
 import {CarouselModule} from 'ngx-owl-carousel-o';
+import {EmailService} from '../services/email.service';
 
 
 declare var grecaptcha: any;
@@ -62,11 +62,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       if (typeof grecaptcha !== 'undefined') {
-        console.log('grecaptcha is available.');
 
         const recaptchaContainer = document.getElementById('home-recaptcha');
         if (!recaptchaContainer || recaptchaContainer.hasChildNodes()) {
-          console.log('reCAPTCHA has already been rendered.');
           return;
         }
       } else {
@@ -85,14 +83,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
       return;
     }
 
-    try {
-      await this.emailService.sendEmail(this.form.value);
-      this.emailSent = true;
-      this.errorMessage = '';
-      this.form.reset();
-    } catch (error: any) {
-      this.errorMessage = error.message;
-      this.emailSent = false;
-    }
+    this.emailService.sendInquiry(this.form.value)
+      .subscribe({
+        next: () => {
+          alert('Email sent successfully!');
+          this.emailSent = true;
+          this.errorMessage = '';
+          this.form.reset();
+        },
+        error: (err) => {
+          this.errorMessage = err?.error?.message || 'There was an error sending your message. Please try again later.';
+          this.emailSent = false;
+        },
+      });
   }
 }
