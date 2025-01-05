@@ -33,7 +33,6 @@ export class AuthService {
     }
   }
 
-  // Observable to check if user is authenticated
   isAuthenticated() {
     return this.isAuthenticatedSubject.asObservable();
   }
