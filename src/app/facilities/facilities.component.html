@@ -1,4 +1,4 @@
-<section id="banner" >
+<section id="banner">
   <app-banner
     [isHomePage]="false"
     title="Facilities at India Center"
@@ -8,43 +8,78 @@
 </section>
 
 <section id="facility-content">
-  <div class="facilities">
+  <!-- Facilities List -->
+  <div class="facilities" *ngIf="!viewMode">
     <div class="facility-list">
-      <div class="facility-item">
-        <img ngOptimizedImage ngSrc="assets/images/facility/gym.jpeg" alt="Gym & Fitness Center" class="facility-image"
-             height="190" width="265">
-        <h3>Gym & Fitness Center</h3>
-        <p>State-of-the-art equipment for your fitness needs.</p>
+      <div *ngFor="let facility of facilities" class="facility-item">
+        <img
+          ngSrc="{{ facility.imageUrl }}"
+          alt="{{ facility.name }}"
+          class="facility-image"
+          height="190"
+          width="265"
+        />
+        <h3>{{ facility.name }}</h3>
+        <p>{{ facility.description }}</p>
+        <p>
+          Price:
+          <span *ngIf="facility.pricePerHour">
+            {{ facility.pricePerHour | currency }} / Hour
+          </span>
+          <span *ngIf="facility.pricePerDay">
+            {{ facility.pricePerDay | currency }} / Day
+          </span>
+        </p>
       </div>
-      <div class="facility-item">
-        <img ngSrc="assets/images/facility/pond.jpg" alt="Pond & Outdoor Area" class="facility-image" height="1911"
-             width="3388">
-        <h3>Pond & Outdoor Area</h3>
-        <p>Relax by the pond and enjoy nature.</p>
+    </div>
+  </div>
+
+  <!-- Availability Section -->
+  <div class="facilities" *ngIf="viewMode === 'availability'">
+    <div class="content-wrapper">
+      <div class="image-container">
+        <img [src]="selectedFacility?.imageUrl" alt="Selected Facility" class="facility-image-large" />
       </div>
-      <div class="facility-item">
-        <img ngOptimizedImage ngSrc="assets/images/facility/sauna.jpeg" alt="Sauna" class="facility-image" height="179"
-             width="281">
-        <h3>Sauna</h3>
-        <p>Unwind and rejuvenate in our luxurious sauna.</p>
+      <div class="calendar-container">
+        <h2>Check Availability for {{ selectedFacility?.name }}</h2>
+                                <!--FACILITY DROPDOWN-->
+        <label for="facilitySelect">Select Facility:</label>
+
+        <select id="facilitySelect" [(ngModel)]="selectedFacility" (change)="onFacilityChange()">
+          <option *ngFor="let facility of facilities" [ngValue]="facility">{{ facility.name }}</option>
+        </select>
+
+        <label for="startDate">Start Date:</label>
+        <input type="date" [(ngModel)]="availabilityDates.startDate" id="startDate" [min]="currentDate" />
+        <label for="endDate">End Date:</label>
+        <input type="date" [(ngModel)]="availabilityDates.endDate" id="endDate" [min]="availabilityDates.startDate" />
+        <button class="btn" (click)="checkAvailability()">Check Dates</button>
+        <button class="btn btn-back" (click)="goBack()">Back to Facilities</button>
       </div>
-      <div class="facility-item">
-        <img ngOptimizedImage ngSrc="assets/images/facility/guest-house.jpeg" alt="Guest House" class="facility-image"
-             height="183" width="275">
-        <h3>Guest House</h3>
-        <p>Comfortable accommodations for visitors.</p>
+    </div>
+  </div>
+
+  <!-- Booking Section -->
+  <div class="facilities" *ngIf="viewMode === 'booking'">
+    <div class="content-wrapper">
+      <div class="image-container">
+        <img [src]="selectedFacility?.imageUrl" alt="Selected Facility" class="facility-image-large" />
       </div>
-      <div class="facility-item">
-        <img ngOptimizedImage ngSrc="assets/images/facility/celebration-hall.jpeg" alt="Celebration Hall" class="facility-image"
-             height="495" width="900">
-        <h3>Celebration Hall</h3>
-        <p>A spacious hall with a capacity for 250 people for events and celebrations.</p>
-      </div>
-      <div class="facility-item">
-        <img ngOptimizedImage ngSrc="assets/images/facility/yoga-room.jpeg" alt="Yoga & Meditation Room" class="facility-image"
-             height="225" width="225">
-        <h3>Yoga & Meditation Room</h3>
-        <p>Find your inner peace in our peaceful yoga space.</p>
+      <div class="form-container">
+        <h2>Book {{ selectedFacility?.name }}</h2>
+
+        <label for="facilitySelect">Select Facility:</label>
+
+        <select id="facilitySelect1" [(ngModel)]="selectedFacility" (change)="onFacilityChange()">
+          <option *ngFor="let facility of facilities" [ngValue]="facility">{{ facility.name }}</option>
+        </select>
+
+        <label for="startDate">Start Date:</label>
+        <input type="date" [(ngModel)]="bookingDates.startDate" id="stDate" [min]="currentDate" />
+        <label for="endDate">End Date:</label>
+        <input type="date" [(ngModel)]="bookingDates.endDate" id="enDate" [min]="bookingDates.startDate" />
+        <button class="btn" (click)="bookFacility()">Confirm Booking</button>
+        <button class="btn btn-back" (click)="goBack()">Back to Facilities</button>
       </div>
     </div>
   </div>
@@ -56,17 +91,17 @@
     <div class="booking-item">
       <h3>Check Availability</h3>
       <p>To get more details, click the below button:</p>
-      <button (click)="redirectToAvailability()" class="btn">Check Availability</button>
+      <button (click)="showAvailability(facilities[0])" class="btn">Check Availability</button>
     </div>
     <div class="booking-item">
       <h3>Book Facility</h3>
       <p>To book a facility, please click the below button:</p>
-      <button (click)="redirectToBooking()" class="btn">Book Now</button>
+      <button (click)="showBooking(facilities[0])" class="btn">Book Now</button>
     </div>
     <div class="booking-item">
       <h3>More Information</h3>
       <p>To get more info, please click the below button:</p>
-      <a href="https://sunsportsinfra.com/info" target="_blank" class="btn">Information</a>
+      <button (click)="redirectToBooking()" class="btn">Information</button>
     </div>
   </div>
 </section>
